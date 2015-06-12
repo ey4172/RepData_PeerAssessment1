@@ -48,7 +48,8 @@ g = ggplot(total_steps,aes(total_steps$steps))
 g + geom_histogram(breaks = seq(0,25000,by=3000),col="black", aes(fill=..count..)) + scale_fill_gradient("count",low="green",high="red")+
 labs(x="Total Steps" , title = "Number of steps taken per day") + theme(panel.background = element_rect(fill="white"))
 ```
-
+![Histogram](instructions_fig/plot1.png)
+ 
 Calculating and reporting the mean and median number of total steps taken each day
 
 ```{r}
@@ -74,6 +75,7 @@ g = ggplot()
 g+geom_line(data = daily_pattern,aes(x=interval,y=steps),col="purple") +
 labs(x="Interval",y="Steps",title="Time series plot of average no of steps taken") + theme(panel.background = element_rect(fill = "white", colour = "black"))
 ```
+![Time series plot](instructions_fig/plot2.png)
 
 Determining the 5 min interval that contains the maximum number of steps
 
@@ -117,8 +119,9 @@ making a histogram of total steps taken each day
 steps = aggregate(steps~date,data=imputed,sum)
 g = ggplot(steps,aes(steps))
 g + geom_histogram(breaks=seq(0,27000,3700),col="black",fill="green",alpha=0.3)+
-labs(x="Steps",y="Count") + theme(panel.background = element_rect(fill = "white"))
+labs(x="Steps",y="Count",title="Histogram of total steps taken each day with missing values filled in") + theme(panel.background = element_rect(fill = "white"))
 ```
+![Histogram_imputed](instructions_fig/plot3.png)
 
 Recalculating the mean and median total steps per day
 ```{r}
@@ -159,3 +162,4 @@ g = ggplot()
 g + geom_line(data=avg , aes(interval,steps), col = "blue") + facet_wrap(~day_of_week,nrow=2,ncol=1) +
 theme(panel.background = element_rect(fill = "white", colour = "black")) + labs(x="Interval",y="Steps",title="Plot of the 5 min interval and average no of steps taken")
 ```
+![Panel plot](instructions_fig/plot4.png)

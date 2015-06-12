@@ -117,7 +117,7 @@ making a histogram of total steps taken each day
 steps = aggregate(steps~date,data=imputed,sum)
 g = ggplot(steps,aes(steps))
 g + geom_histogram(breaks=seq(0,27000,3700),col="black",fill="green",alpha=0.3)+
-labs(x="Steps",y="Count") + theme(panel.background = element_rect(fill = "white"))
+labs(x="Steps",y="Count",title="Histogram of total steps taken each day with missing values filled in") + theme(panel.background = element_rect(fill = "white"))
 ```
 
 Recalculating the mean and median total steps per day
