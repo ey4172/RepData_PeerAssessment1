@@ -1,4 +1,4 @@
-Peer Assesment 1
+ Peer Assesment 1
 ===================
 
 ## INTRODUCTION
